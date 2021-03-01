@@ -59,5 +59,3 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ${{ github.repository }}:latest
-          build-args: |
-          BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
