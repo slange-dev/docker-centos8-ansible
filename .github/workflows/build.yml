@@ -1,5 +1,5 @@
 ---
-name: Build
+name: Building
 
 on:
   # Trigger the workflow on push or pull request,
@@ -18,7 +18,7 @@ on:
 jobs:
   # Test the image builds and works correctly.
   test:
-    name: Test
+    name: Testing
     runs-on: ubuntu-latest
 
     steps:
