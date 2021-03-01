@@ -1,5 +1,5 @@
 ---
-name: Build
+name: Building
 
 on:
   # Trigger the workflow on push or pull request,
@@ -12,24 +12,28 @@ on:
       - main
   schedule:
     # * is a special character in YAML so you have to quote this string
-            # Runs at every sunday 14:10
+    # Runs at every sunday 14:10
     - cron: "10 2 * * 0"
 
 jobs:
   # Test the image builds and works correctly.
   test:
-    name: Test
+    name: Testing
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the codesource.
       - uses: actions/checkout@v2
 
+      # Test to building the image
       - name: Test building image.
         run: docker build -t docker-ansible .
 
+      #
       - name: Run the built image.
         run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-ansible
 
+      #
       - name: Verify Ansible is accessible in the built image.
         run: docker exec --tty test-container env TERM=xterm ansible --version
 
@@ -45,12 +49,14 @@ jobs:
       - uses: docker/setup-qemu-action@v1
       - uses: docker/setup-buildx-action@v1
 
+      # Login DockerHub.
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # Build and push the image.
       - name: Build and push image.
         uses: docker/build-push-action@v2
         with:
