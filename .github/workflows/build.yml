@@ -76,7 +76,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: ${{ github.workflow }}
+          context: .
           platforms: linux/amd64
           build-args: BUILD_VERSION
           cache-from: type=local,src=/tmp/.buildx-cache
