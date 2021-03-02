@@ -1,6 +1,6 @@
 # CentOS 8 Ansible Test Image
 
-[![CI](https://github.com/slange-dev/docker-centos8-ansible/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/slange-dev/docker-centos8-ansible/actions/workflows/build.yml) [![Docker pulls](https://img.shields.io/docker/pulls/slangedev/docker-centos8-ansible)](https://hub.docker.com/r/slangedev/docker-centos8-ansible/)
+[![CI Build](https://github.com/slange-dev/docker-centos8-ansible/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/slange-dev/docker-centos8-ansible/actions/workflows/build.yml) [![Docker pulls](https://img.shields.io/docker/pulls/slangedev/docker-centos8-ansible)](https://hub.docker.com/r/slangedev/docker-centos8-ansible/)
 
 
 CentOS 8 Docker container for Ansible playbook and role testing.
