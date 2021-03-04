@@ -61,6 +61,7 @@ You can also contribute with
 👤 **slange-dev**
 
 * Website: [https://github.com/slange-dev](https://github.com/slange-dev)
+* Dev.to: [https://dev.to/slangedev](https://dev.to/slangedev)
 * Github: [@slange-dev](https://github.com/slange-dev)
 
 ## Copyright
