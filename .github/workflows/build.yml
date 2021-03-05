@@ -48,7 +48,7 @@ jobs:
         run: docker build -t docker-ansible .
         env:
           DOCKER_CLI_EXPERIMENTAL: enabled
-  
+
       - name: Run the built image.
         id: run_image
         run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-ansible
