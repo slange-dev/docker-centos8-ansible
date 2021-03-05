@@ -4,6 +4,7 @@
 [![Docker pulls](https://img.shields.io/docker/pulls/slangedev/docker-centos8-ansible)](https://hub.docker.com/r/slangedev/docker-centos8-ansible/)
 [![Version](https://img.shields.io/docker/v/slangedev/docker-centos8-ansible/latest)](https://hub.docker.com/r/slangedev/docker-centos8-ansible/)
 [![Image Size](https://img.shields.io/docker/image-size/slangedev/docker-centos8-ansible/latest)](https://hub.docker.com/r/slangedev/docker-centos8-ansible/)
+[![CodeFactor](https://www.codefactor.io/repository/github/slange-dev/docker-centos8-ansible/badge?s=02c5489b45a9ea6a00d8526fae9eaf52fabfb61e)](https://www.codefactor.io/repository/github/slange-dev/docker-centos8-ansible)
 
 CentOS 8 Docker container for Ansible playbook and role testing.
 
@@ -18,8 +19,6 @@ This image is built on Docker Hub automatically any time the upstream OS contain
   1. [Install Docker](https://docs.docker.com/engine/installation/).
   2. `cd` into this directory.
   3. Run `docker build -t centos8-ansible .`
-
-> Note: Switch between `master` and `testing` depending on whether you want the extra testing tools present in the resulting image.
 
 ## How to Use
 
@@ -48,7 +47,6 @@ Contributions are what make the open source community such an amazing place to b
 
 ![image](https://user-images.githubusercontent.com/16810959/29695161-2d8ef9e6-890f-11e7-8b1d-cf3e0c281755.png)
 
-
 ## 💛 Support the project
 
 If this project was useful to you in some form, I would be glad to have your support.  It will help to keep the project alive and to have more time to work on Open Source.
@@ -69,4 +67,4 @@ You can also contribute with
 
 ## Copyright
 
-Copyright © in 2021 by [slange-dev](https://github.com/slange-dev).
+Created in 2021 by [slange-dev](https://github.com/slange-dev).
