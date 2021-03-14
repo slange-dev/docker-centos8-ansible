@@ -41,7 +41,7 @@ RUN pip3 install $PIP_ANSIBLE
 
 # Install Ansible inventory file.
 RUN mkdir -p /etc/ansible
-RUN echo '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
+RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
 
 #
 VOLUME ["/sys/fs/cgroup"]
