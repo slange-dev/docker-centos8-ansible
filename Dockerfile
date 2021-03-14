@@ -2,11 +2,11 @@ FROM centos:8
 LABEL maintainer='slange-dev'
 ENV container=docker
 
-ENV PIP_UPGRADE pip==21.0.1
-ENV PIP_PACKAGES ansible==3.1.0
+ENV PIP_UPGRADE pip==v21.0.1
+ENV PIP_PACKAGES ansible==v3.1.0
 
 # Install systemd -- See https://hub.docker.com/_/centos/
-RUN "(cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done)"; \
+RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
 rm -f /lib/systemd/system/multi-user.target.wants/*;\
 rm -f /etc/systemd/system/*.wants/*;\
 rm -f /lib/systemd/system/local-fs.target.wants/*; \
@@ -43,7 +43,7 @@ RUN pip3 install ${PIP_PACKAGES}
 
 # Install Ansible inventory file.
 RUN mkdir -p /etc/ansible
-RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
+RUN echo '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
 
 #
 VOLUME ["/sys/fs/cgroup"]
