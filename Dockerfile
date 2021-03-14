@@ -5,8 +5,8 @@ ENV container=docker
 ENV pip_packages "ansible==3.1.0"
 
 # Install systemd -- See https://hub.docker.com/_/centos/
-RUN ("cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
-systemd-tmpfiles-setup.service ]" || "rm -f $i; done"); \
+RUN ('cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
+systemd-tmpfiles-setup.service ]' || 'rm -f $i; done'); \
 rm -f /lib/systemd/system/multi-user.target.wants/*;\
 rm -f /etc/systemd/system/*.wants/*;\
 rm -f /lib/systemd/system/local-fs.target.wants/*; \
@@ -22,7 +22,6 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
  && yum -y install \
       epel-release \
       initscripts \
-      #sudo \
       which \
       hostname \
       libyaml-devel \
