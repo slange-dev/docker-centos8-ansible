@@ -33,11 +33,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Hadolint Dockerfile
-        id: hadolint
-        uses: brpaz/hadolint-action@v1.2.1
-        with:
-          dockerfile: Dockerfile
+      #- name: Hadolint Dockerfile
+        #id: hadolint
+        #uses: brpaz/hadolint-action@v1.2.1
+        #with:
+          #dockerfile: Dockerfile
 
   # Test the image builds and works correctly.
   test:
