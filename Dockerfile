@@ -2,7 +2,7 @@ FROM centos:8
 LABEL maintainer='slange-dev'
 ENV container=docker
 
-ENV pip_version pip==21.0.1
+ENV pip_version "pip==21.0.1"
 ENV pip_packages "ansible==3.1.0"
 
 # Install systemd -- See https://hub.docker.com/_/centos/
