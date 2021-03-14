@@ -2,8 +2,8 @@ FROM centos:8
 LABEL maintainer='slange-dev'
 ENV container=docker
 
-ENV PIP_VERSION pip==21.0.1
-ENV PIP_ANSIBLE ansible==3.1.0
+ENV pip_version pip==21.0.1
+ENV pip_packages "ansible==3.1.0"
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
@@ -31,10 +31,10 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
  && yum clean all
 
 # Upgrade pip to latest version.
-RUN pip3 install --upgrade $PIP_VERSION
+RUN pip3 install --upgrade $pip_version
 
 # Install Ansible via Pip.
-RUN pip3 install $PIP_ANSIBLE
+RUN pip3 install $pip_packages
 
 # Disable requiretty.
 #RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
