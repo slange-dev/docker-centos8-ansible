@@ -2,7 +2,7 @@ FROM centos:8
 LABEL maintainer='slange-dev'
 ENV container=docker
 
-ENV PIP_UPGRADE pip==v21.0.1
+ARG PIP_UPGRADE 21.0.1
 ENV PIP_PACKAGES ansible==v3.1.0
 
 # Install systemd -- See https://hub.docker.com/_/centos/
@@ -31,7 +31,7 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
  && yum clean all
 
 # Upgrade pip to latest version.
-RUN pip3 install --upgrade ${PIP_UPGRADE}
+RUN pip3 install --upgrade pip== ${PIP_VERSION}
 
 # Install Ansible via Pip.
 RUN pip3 install ${PIP_PACKAGES}
