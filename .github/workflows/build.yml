@@ -37,7 +37,7 @@ jobs:
         id: hadolint
         uses: brpaz/hadolint-action@v1.2.1
         with:
-          dockerfile: 'Dockerfile'
+          dockerfile: Dockerfile
 
   # Test the image builds and works correctly.
   test:
