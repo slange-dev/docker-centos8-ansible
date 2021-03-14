@@ -24,3 +24,6 @@
 - color: ffffff
   name: wontfix
   description: This will not be worked on
+- color: d73a4a
+  name: Autosquash
+  description: Autosquash
