@@ -2,8 +2,8 @@ FROM centos:8
 LABEL maintainer='slange-dev'
 ENV container=docker
 
-ARG PIP_VERSION pip==21.0.1
-ARG PIP_ANSIBLE ansible==3.1.0
+ENV PIP_VERSION pip==21.0.1
+ENV PIP_ANSIBLE ansible==3.1.0
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
