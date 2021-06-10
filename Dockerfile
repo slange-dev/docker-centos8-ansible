@@ -22,7 +22,7 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
  && yum -y install \
       epel-release \
       initscripts \
-      #sudo \
+      sudo \
       which \
       hostname \
       libyaml-devel \
@@ -38,12 +38,11 @@ RUN pip3 install --upgrade pip
 RUN pip3 install $pip_packages
 
 # Disable requiretty.
-#RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
+RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
 
 # Install Ansible inventory file.
 RUN mkdir -p /etc/ansible
 RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
 
-#
 VOLUME ["/sys/fs/cgroup"]
 CMD ["/usr/lib/systemd/systemd"]
