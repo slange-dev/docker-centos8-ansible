@@ -20,6 +20,7 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
  && yum -y update \
  && yum -y config-manager --set-enabled powertools \
  && yum -y install \
+      # sudo \
       epel-release \
       initscripts \
       which \
