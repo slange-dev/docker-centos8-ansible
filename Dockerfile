@@ -22,7 +22,6 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
  && yum -y install \
       epel-release \
       initscripts \
-      sudo \
       which \
       hostname \
       libyaml-devel \
@@ -44,5 +43,6 @@ RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
 RUN mkdir -p /etc/ansible
 RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
 
+# Add volume and systemd
 VOLUME ["/sys/fs/cgroup"]
 CMD ["/usr/lib/systemd/systemd"]
