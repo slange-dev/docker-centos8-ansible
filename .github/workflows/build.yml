@@ -12,8 +12,8 @@ on:
       - master
   schedule:
     # * is a special character in YAML so you have to quote this string
-            # Runs at every sunday 14:10
-    - cron: "25 4 * * 0"
+            # Runs at 00:20:00 every 5 days
+    - cron: "20 0 */5 * *"
 
 jobs:
   # Lint the Dockerfile
