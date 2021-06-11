@@ -25,14 +25,6 @@ jobs:
       #- name: Checkout
         #uses: actions/checkout@v2.3.4
 
-      #- name: Lint Dockerfile
-        #id: lint
-        #uses: luke142367/Docker-Lint-Action@v1.1.1
-        #with:
-          #target: Dockerfile
-        #env:
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       #- name: Hadolint Dockerfile
         #id: hadolint
         #uses: brpaz/hadolint-action@v1.2.1
@@ -43,7 +35,7 @@ jobs:
   test:
     name: Testing Dockerfile
     runs-on: ubuntu-latest
-    #needs: [lint]
+    # needs: [lint]
 
     steps:
       - name: Checkout
