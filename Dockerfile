@@ -29,11 +29,8 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
       hostname \
       libyaml-devel \
       $python_version \
-      $python_version-pip \
-      $python_version-pyyaml \
- && yum clean all \
- && yum -y update \
- && yum -y upgrade \
+      python3-pip \
+      python3-pyyaml \
  && yum clean all
 
 # Upgrade pip to latest version.
