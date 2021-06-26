@@ -18,6 +18,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 # Install requirements.
 RUN yum -y install rpm centos-release dnf-plugins-core \
  && yum -y update \
+ && yum -y upgrade \
  && yum -y config-manager --set-enabled powertools \
  && yum -y install \
       sudo \
@@ -29,6 +30,9 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
       python3 \
       python3-pip \
       python3-pyyaml \
+ && yum clean all \
+ && yum -y update \
+ && yum -y upgrade \
  && yum clean all
 
 # Upgrade pip to latest version.
