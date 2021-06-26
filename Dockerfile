@@ -3,6 +3,7 @@ LABEL maintainer="slange-dev"
 ENV container=docker
 
 ENV pip_packages "ansible"
+ENV python_version "python3.8"
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
@@ -27,7 +28,7 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
       which \
       hostname \
       libyaml-devel \
-      python3 \
+      $python_version \
       python3-pip \
       python3-pyyaml \
  && yum clean all \
@@ -36,7 +37,7 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
  && yum clean all
 
 # Upgrade pip to latest version.
-RUN pip3 install --upgrade pip
+RUN pip3 install --user ansible --upgrade pip
 
 # Install Ansible via Pip.
 RUN pip3 install $pip_packages
