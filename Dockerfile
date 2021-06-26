@@ -29,18 +29,18 @@ RUN yum -y install rpm centos-release dnf-plugins-core \
       hostname \
       libyaml-devel \
       $python_version \
-      python3-pip \
-      python3-pyyaml \
+      $python_version-pip \
+      $python_version-pyyaml \
  && yum clean all \
  && yum -y update \
  && yum -y upgrade \
  && yum clean all
 
 # Upgrade pip to latest version.
-RUN pip3 install --user --upgrade pip
+RUN -m pip3 install --user --upgrade pip
 
 # Install Ansible via Pip.
-RUN pip3 install $pip_packages
+RUN -m pip3 install $pip_packages
 
 # Disable requiretty.
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
